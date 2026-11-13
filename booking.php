@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $eventDate = $_POST["event_date"] ?? "";
     $eventTime = $_POST["event_time"] ?? "";
     $guestCount = filter_var($_POST["guest_count"] ?? "", FILTER_VALIDATE_INT);
-    $packageName = trim($_POST["package_name"] ?? "");
+   $packageName = trim($_POST["package_name"] ?? "");
 
     if ($eventType === "" || $venueArea === "" || $eventDate === "" || $eventTime === "" || !$guestCount || $guestCount < 1 || $packageName === "") {
         $_SESSION["flash_message"] = "Please complete all required fields, including the venue area and package.";
